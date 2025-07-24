@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Users, Calendar, Clock, FileText, TrendingUp, AlertTriangle, Plus } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Users, Calendar, Clock, FileText, TrendingUp, AlertTriangle, Plus, UserCog, CalendarCheck } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
@@ -334,6 +335,57 @@ export const AdminDashboard = () => {
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Quick Actions */}
+      <div className="grid gap-6 md:grid-cols-3">
+        <Link to="/admin/employees">
+          <Card className="bg-glass border-glass backdrop-blur-xl hover:bg-glass/80 transition-colors cursor-pointer">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <UserCog className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground">Employee Management</h3>
+                  <p className="text-sm text-muted-foreground">Manage employee records and information</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link to="/admin/leaves">
+          <Card className="bg-glass border-glass backdrop-blur-xl hover:bg-glass/80 transition-colors cursor-pointer">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                  <CalendarCheck className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground">Leave Management</h3>
+                  <p className="text-sm text-muted-foreground">Review and approve leave requests</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Link to="/admin/worklogs">
+          <Card className="bg-glass border-glass backdrop-blur-xl hover:bg-glass/80 transition-colors cursor-pointer">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
+                  <FileText className="h-6 w-6 text-green-500" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground">Worklog Management</h3>
+                  <p className="text-sm text-muted-foreground">Monitor employee work logs and productivity</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">

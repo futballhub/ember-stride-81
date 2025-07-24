@@ -12,6 +12,9 @@ import { EmployeeLeaveRequests } from "@/pages/employee/LeaveRequests";
 import { EmployeeWorkLogs } from "@/pages/employee/WorkLogs";
 import { EmployeePerformance } from "@/pages/employee/Performance";
 import { AdminDashboard } from "@/pages/admin/AdminDashboard";
+import { AdminEmployeeManagement } from "@/pages/admin/EmployeeManagement";
+import { AdminLeaveManagement } from "@/pages/admin/LeaveManagement";
+import { AdminWorklogManagement } from "@/pages/admin/WorklogManagement";
 import { ProfileSetup } from "@/pages/employee/ProfileSetup";
 import NotFound from "./pages/NotFound";
 
@@ -71,9 +74,9 @@ const App = () => (
               </ProtectedRoute>
             }>
               <Route index element={<AdminDashboard />} />
-              <Route path="employees" element={<div>Employee Management Coming Soon</div>} />
-              <Route path="leave" element={<div>Leave Management Coming Soon</div>} />
-              <Route path="worklogs" element={<div>Work Log Management Coming Soon</div>} />
+              <Route path="employees" element={<AdminEmployeeManagement />} />
+              <Route path="leaves" element={<AdminLeaveManagement />} />
+              <Route path="worklogs" element={<AdminWorklogManagement />} />
               <Route path="reports" element={<div>Reports Coming Soon</div>} />
             </Route>
 
